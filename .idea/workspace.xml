@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c027a4b0-ad08-42b1-af9a-49472f2270d8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/lab 1/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/lab 1/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab 1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/lab 1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab 1/out/production/Programming/META-INF/Programming.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab 1/out/production/Programming/Project.class" beforeDir="false" afterPath="$PROJECT_DIR$/lab 1/out/production/Programming/Project.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab 1/out/production/Programming/test.class" beforeDir="false" afterPath="$PROJECT_DIR$/lab 1/out/production/Programming/test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab 1/out/production/Programming/vehicle.class" beforeDir="false" afterPath="$PROJECT_DIR$/lab 1/out/production/Programming/vehicle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab 2/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab 2/out/production/lab 2/META-INF/lab 2.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab 2/out/production/lab 2/Person.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab 2/out/production/lab 2/com/lab2/test/Animal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab 2/out/production/lab 2/com/lab2/test/Control.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab 2/out/production/lab 2/song.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab 2/out/production/lab 2/vehicle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab 2/src/Person.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab 2/src/com/lab2/test/Animal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab 2/src/com/lab2/test/Control.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab 2/src/song.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab 2/src/vehicle.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1Xcmg1GEsDsYR1csV25CkPiNlew" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c027a4b0-ad08-42b1-af9a-49472f2270d8" name="Default Changelist" comment="" />
+      <created>1581353864489</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1581353864489</updated>
+      <workItem from="1581353869812" duration="84000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="549" y="175" key="FileChooserDialogImpl" timestamp="1581353949557">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="549" y="175" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1581353949557" />
+    <state x="209" y="54" key="new project wizard" timestamp="1581353951213">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="209" y="54" key="new project wizard/0.0.1536.864@0.0.1536.864" timestamp="1581353951213" />
+  </component>
+</project>
