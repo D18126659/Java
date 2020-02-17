@@ -6,7 +6,7 @@ public class PoundsToKg {
 
         Scanner input = new Scanner(System.in);
         System.out.println("1 pound is 0.45359237kg");
-        System.out.println("Please input a weight: ");
+        System.out.println("Please input a weight (in pounds): ");
         pounds = input.nextFloat();
 
         float result = (float) (pounds *0.45359237);
