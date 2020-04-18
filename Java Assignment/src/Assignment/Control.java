@@ -11,7 +11,6 @@ public class Control extends User_Input {
             System.out.println(arr1[i]);
         }*/
 
-
     }
 
 }

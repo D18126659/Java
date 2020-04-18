@@ -152,6 +152,29 @@ public class User_Input extends Gui implements ActionListener{
         button.setBounds(130,530,100,20);
     }
 
+    public JLabel getTravel() {
+        return travel;
+    }
+
+    public JLabel getAche() {
+        return ache;
+    }
+
+    public JLabel getCough() {
+        return cough;
+    }
+
+    public JLabel getSore() {
+        return sore;
+    }
+
+    public JLabel getTemp() {
+        return temp;
+    }
+
+
+
+
     @Override
     public void actionPerformed(ActionEvent e) {
 

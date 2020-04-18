@@ -45,9 +45,9 @@ public class CoronaTest extends Gui implements ActionListener {
         arr1=User_Input.arr1;
 
         Excel_Sheet records = new Excel_Sheet();
-        List<List<String>> arr2 = records.Excel_Sheet();
-            arr2.add();
-            arr2.add(Excel_Sheet);
+        //<List<String>> arr2 = records.Excel_Sheet();
+            //arr2.add();
+           // arr2.add(Excel_Sheet);
 
         for(int i=0;i<5;i++){
             System.out.println(arr1[i]);

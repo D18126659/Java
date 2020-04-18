@@ -22,11 +22,14 @@ public class Excel_Sheet {
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
+
+
             return records;
     }
-        public boolean FileReader(String MLData){
-        entries = new ArrayList<Entry>();
-        }
+       // public boolean FileReader(String MLData) {
+
+        //}
+
 
 
     }
