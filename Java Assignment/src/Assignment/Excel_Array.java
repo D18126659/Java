@@ -1,48 +1,28 @@
 package Assignment;
 
-
-import org.w3c.dom.Node;
-
-import java.awt.*;
-import java.sql.SQLOutput;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+import java.text.DecimalFormat;
 
 
 public class Excel_Array {
 
-
-    //boolean temperatureNo,AcheNo,CoughNo,SoreThroatNo,RecentlytraveledNo;
-    //boolean temperatureYes,AcheYes,CoughYes,SoreThroatYes,RecentlytraveledYes;
-    //double Negative_Result,Positive_Result;
-    double tempHotPosYes,tempHotPosNo,tempHotNegYes,tempHotNegNo,tempNormalPosYes,tempNormalPosNo
-            ,tempNormalNegYes,tempNormalNegNo,tempCoolPosYes,tempCoolPosNo,tempCoolNegYes,
-            tempCoolNegNo,tempColdPosYes,tempColdPosNo,tempColdNegYes,tempColdNegNo
-            , achePosYes, achePosNo, acheNegYes, acheNegNo,
-            coughPosYes,coughPosNo,coughNegYes,coughNegNo,
-            sorePosYes, sorePosNo,soreNegYes,soreNegNo,
-            recentlyPosYes,recentlyPosNo, recentlyNegYes,recentlyNegNo,
-            covid19PosYes,covid19PosNo,covidNegYes,covid19NegNo;
     Excel_Sheet records = new Excel_Sheet();
     double total = records.Excel_Sheet().size();
-    double corona;
     int counter=0;
     List<List<String>> rec = records.Excel_Sheet();
-    //HashMap<String, String>CoronaVirus = new HashMap<>();
     private HashMap<String, Double> tempPos = new HashMap<>();
-    private HashMap<String, Integer> tempNeg = new HashMap<>();
-    private HashMap<String, Integer> achePos = new HashMap<>();
-    private HashMap<String, Integer> acheNeg = new HashMap<>();
-    private HashMap<String, Integer> coughPos = new HashMap<>();
-    private HashMap<String, Integer> coughNeg = new HashMap<>();
-    private HashMap<String, Integer> sorePos = new HashMap<>();
-    private HashMap<String, Integer> soreNeg = new HashMap<>();
-    private HashMap<String, Integer> recentlyPos = new HashMap<>();
-    private HashMap<String, Integer> recentlyNeg = new HashMap<>();
-    private HashMap<String, Integer> covid19Pos = new HashMap<>();
-    private HashMap<String, Integer> covid19Neg = new HashMap<>();
+    private HashMap<String, Double> tempNeg = new HashMap<>();
+    private HashMap<String, Double> achePos = new HashMap<>();
+    private HashMap<String, Double> acheNeg = new HashMap<>();
+    private HashMap<String, Double> coughPos = new HashMap<>();
+    private HashMap<String, Double> coughNeg = new HashMap<>();
+    private HashMap<String, Double> sorePos = new HashMap<>();
+    private HashMap<String, Double> soreNeg = new HashMap<>();
+    private HashMap<String, Double> recentlyPos = new HashMap<>();
+    private HashMap<String, Double> recentlyNeg = new HashMap<>();
+    private HashMap<String, Double> covid19 = new HashMap<>();
+
 
 
 
@@ -61,40 +41,38 @@ public class Excel_Array {
         tempPos.put("normal",0.0);
         tempPos.put("cool",0.0);
 
-        tempNeg.put("hot",0);
-        tempNeg.put("cold",0);
-        tempNeg.put("normal",0);
-        tempNeg.put("cool",0);
+        tempNeg.put("hot",0.0);
+        tempNeg.put("cold",0.0);
+        tempNeg.put("normal",0.0);
+        tempNeg.put("cool",0.0);
 
-        achePos.put("yes",0);
-        achePos.put("no",0);
+        achePos.put("yes",0.0);
+        achePos.put("no",0.0);
 
-        acheNeg.put("no",0);
-        acheNeg.put("yes",0);
+        acheNeg.put("no",0.0);
+        acheNeg.put("yes",0.0);
 
-        coughPos.put("yes",0);
-        coughPos.put("no",0);
+        coughPos.put("yes",0.0);
+        coughPos.put("no",0.0);
 
-        coughNeg.put("no",0);
-        coughNeg.put("yes",0);
+        coughNeg.put("no",0.0);
+        coughNeg.put("yes",0.0);
 
-        sorePos.put("yes",0);
-        sorePos.put("no",0);
+        sorePos.put("yes",0.0);
+        sorePos.put("no",0.0);
 
-        soreNeg.put("no",0);
-        soreNeg.put("yes",0);
+        soreNeg.put("no",0.0);
+        soreNeg.put("yes",0.0);
 
-        recentlyPos.put("yes",0);
-        recentlyPos.put("no",0);
+        recentlyPos.put("yes",0.0);
+        recentlyPos.put("no",0.0);
 
-        recentlyNeg.put("no",0);
-        recentlyNeg.put("yes",0);
+        recentlyNeg.put("no",0.0);
+        recentlyNeg.put("yes",0.0);
 
-        covid19Pos.put("yes",0);
-        covid19Pos.put("no",0);
+        covid19.put("yes",0.0);
+        covid19.put("no",0.0);
 
-        covid19Neg.put("no",0);
-        covid19Neg.put("yes",0);
     }
 
     public void hashMapValues(){
@@ -110,34 +88,20 @@ public class Excel_Array {
             {
                 tempPos.put("hot",tempPos.get("hot")+1);
             }
-            if(array[0].equals("hot") && array[5].equals("no"))
-            {
-                tempPos.put("hot",tempPos.get("hot")+1);
-            //temp Cold
-            }
+
             if(array[0].equals("cold") && array[5].equals("yes"))
             {
                 tempPos.put("cold",tempPos.get("cold")+1);
             }
-            if(array[0].equals("cold") && array[5].equals("no"))
-            {
-                tempPos.put("cold",tempPos.get("cold")+1);
-            }
+
             //temp Normal
             if(array[0].equals("normal") && array[5].equals("yes"))
             {
                 tempPos.put("normal",tempPos.get("normal")+1);
             }
-            if(array[0].equals("normal") && array[5].equals("no"))
-            {
-                tempPos.put("normal",tempPos.get("normal")+1);
-            }
+
             //Temp Cool
             if(array[0].equals("cool") && array[5].equals("yes"))
-            {
-                tempPos.put("cool",tempPos.get("cool")+1);
-            }
-            if(array[0].equals("cool") && array[5].equals("no"))
             {
                 tempPos.put("cool",tempPos.get("cool")+1);
             }
@@ -148,38 +112,24 @@ public class Excel_Array {
             {
                 tempNeg.put("hot",tempNeg.get("hot")+1);
             }
-            if(array[0].equals("hot") && array[5].equals("yes"))
-            {
-                tempNeg.put("hot",tempNeg.get("hot")+1);
-            }
+
             //temp cold
             if(array[0].equals("cold") && array[5].equals("no"))
             {
                 tempNeg.put("cold",tempNeg.get("cold")+1);
             }
-            if(array[0].equals("cold") && array[5].equals("yes"))
-            {
-                tempNeg.put("cold",tempNeg.get("cold")+1);
-            }
+
             //Temp normal;
             if(array[0].equals("normal") && array[5].equals("no"))
             {
                 tempNeg.put("normal",tempNeg.get("normal")+1);
             }
-            if(array[0].equals("normal") && array[5].equals("yes"))
-            {
-                tempNeg.put("normal",tempNeg.get("normal")+1);
-            }
+
             //Temp cool
             if(array[0].equals("cool") && array[5].equals("no"))
             {
                 tempNeg.put("cool",tempNeg.get("cool")+1);
             }
-            if(array[0].equals("cool") && array[5].equals("yes"))
-            {
-                tempNeg.put("cool",tempNeg.get("cool")+1);
-            }
-
             //Ache Positive
             if(array[1].equals("yes") && array[5].equals("yes"))
             {
@@ -259,149 +209,216 @@ public class Excel_Array {
             {
                 recentlyNeg.put("yes",recentlyNeg.get("yes")+1);
             }
-            //Covid_19 Positive
-            if(array[5].equals("yes") && array[5].equals("yes"))
+            //Covid 19
+            if(array[5].equals("yes"))
             {
-                covid19Pos.put("yes",covid19Pos.get("yes")+1);
+                covid19.put("yes",covid19.get("yes")+1);
             }
-            if(array[5].equals("no") && array[5].equals("yes"))
+            if(array[5].equals("no"))
             {
-                covid19Pos.put("no",covid19Pos.get("no")+1);
+                covid19.put("no",covid19.get("no")+1);
             }
-            //Covid_19 Negative
-            if(array[5].equals("no") && array[5].equals("no"))
-            {
-                covid19Neg.put("no",covid19Neg.get("no")+1);
-            }
-            if(array[5].equals("yes") && array[5].equals("no"))
-            {
-                covid19Neg.put("yes",covid19Neg.get("yes")+1);
-            }
+
         }
-        /*System.out.println(achePos.get("yes"));
-        System.out.println(achePos.get("no"));
-        System.out.println(acheNeg.get("yes"));
-        System.out.println(acheNeg.get("no"));*/
 
     }
 
-    public void probability (){
+    public void probability () {
 
         //Temp Hot Pos
-       // tempPos.put("hot",tempPos.get("yes")/total);
-        //tempHotPosYes = tempPos.get("yes")/total;
-        /*tempHotPosNo = tempPos.get("no")/total;
+        tempPos.put("hot", tempPos.get("hot") / total);
 
         //Temp Hot Neg
-        tempHotNegYes = tempNeg.get("yes")/total;
-        tempHotNegNo = tempNeg.get("no")/total;
+        tempNeg.put("hot", tempNeg.get("hot") / total);
 
         //Temp normal Pos
-        tempNormalPosYes = tempPos.get("yes")/total;
-        tempNormalPosNo = tempPos.get("no")/total;
+        tempPos.put("normal", tempPos.get("normal") / total);
 
         //Temp normal Neg
-        tempNormalNegYes = tempNeg.get("yes")/total;
-        tempNormalNegNo = tempNeg.get("no")/total;
+        tempNeg.put("normal", tempNeg.get("normal") / total);
 
         //Temp Cool Pos
-        tempCoolPosYes = tempPos.get("yes")/total;
-        tempCoolPosNo = tempPos.get("no")/total;
+        tempPos.put("cool", tempPos.get("cool") / total);
 
         //Temp cool Neg
-        tempCoolNegYes = tempNeg.get("yes")/total;
-        tempCoolNegNo = tempNeg.get("no")/total;
+        tempNeg.put("cool", tempNeg.get("cool") / total);
 
         //Temp Cold Pos
-        tempColdPosYes = tempPos.get("yes")/total;
-        tempColdPosNo = tempPos.get("no")/total;
+        tempPos.put("cold", tempPos.get("cold") / total);
 
         //Temp Cold Neg
-        tempColdNegYes = tempNeg.get("yes")/total;
-        tempColdNegNo = tempNeg.get("no")/total;
-                                                */
+        tempNeg.put("cold", tempNeg.get("cold") / total);
 
 
         //Ache Pos
-        achePosYes = achePos.get("yes")/total;
-        achePosNo = achePos.get("no")/total;
+        achePos.put("yes", achePos.get("yes") / total);
+        achePos.put("no", achePos.get("no") / total);
+
 
         //Ache Neg
-        acheNegYes = acheNeg.get("yes")/total;
-        acheNegNo = acheNeg.get("no")/total;
+        acheNeg.put("yes", acheNeg.get("yes") / total);
+        acheNeg.put("no", acheNeg.get("no") / total);
+
 
         //Cough Pos
-        coughPosYes = coughPos.get("yes")/total;
-        coughPosNo = coughPos.get("no")/total;
+        coughPos.put("yes", coughPos.get("yes") / total);
+        coughPos.put("no", coughPos.get("no") / total);
 
         //Cough Neg
-        coughNegYes = coughNeg.get("yes")/total;
-        coughNegNo = coughNeg.get("no")/total;
+        coughNeg.put("no", coughNeg.get("no") / total);
+        coughNeg.put("yes", coughNeg.get("yes") / total);
 
         //sore Pos
-        sorePosYes = sorePos.get("yes")/total;
-        sorePosNo = sorePos.get("no")/total;
+        sorePos.put("yes", sorePos.get("yes") / total);
+        sorePos.put("no", sorePos.get("no") / total);
 
         //sore Neg
-        soreNegYes = soreNeg.get("yes")/total;
-        soreNegNo = soreNeg.get("no")/total;
+        soreNeg.put("no", soreNeg.get("no") / total);
+        soreNeg.put("yes", soreNeg.get("yes") / total);
 
         //Recently Pos
-        recentlyPosYes = recentlyPos.get("yes")/total;
-        recentlyPosNo = recentlyPos.get("no")/total;
+        recentlyPos.put("yes", recentlyPos.get("yes") / total);
+        recentlyPos.put("no", recentlyPos.get("no") / total);
 
         //Recently Neg
-        recentlyNegYes = recentlyNeg.get("yes")/total;
-        recentlyNegNo = recentlyNeg.get("no")/total;
+        recentlyNeg.put("no", recentlyNeg.get("no") / total);
+        recentlyNeg.put("yes", recentlyNeg.get("yes") / total);
 
         //Covid Pos
-        covid19PosYes = covid19Pos.get("yes")/total;
-        covid19PosNo = covid19Pos.get("no")/total;
+        covid19.put("yes", covid19.get("yes") / total);
 
         //Covid Neg
-        covidNegYes = covid19Neg.get("yes")/total;
-        covid19NegNo = covid19Neg.get("no")/total;
-
-
-       // System.out.println(tempPos.get("hot"));
-        //System.out.println(tempPos.get("yes")/total);
-        System.out.println("cough");
-        System.out.println(coughPos.get("yes") + coughPos.get("no") + coughNeg.get("yes") + coughNeg.get("no"));
-
-        System.out.println("covid_19");
-        System.out.println(covid19Pos.get("yes") + covid19Pos.get("no") + covid19Neg.get("yes") + covid19Neg.get("no"));
-
-        System.out.println("Ache");
-        System.out.println(achePos.get("yes") + achePos.get("no") + acheNeg.get("yes") + acheNeg.get("no"));
-
-        System.out.println("Sore throat");
-        System.out.println(sorePos.get("yes") + sorePos.get("no") + soreNeg.get("yes") + soreNeg.get("no"));
-
-        System.out.println("Recently Traveled");
-        System.out.println(recentlyPos.get("yes") + recentlyPos.get("no") + recentlyNeg.get("yes") + recentlyNeg.get("no"));
-
-
-        /*total = corona.get(false);
-        Negative_Result = TemperatureNo.get(User_Input.getTemp())/total;
-        Negative_Result *= AcheNo.get(User_Input.getAche())/total;
-        Negative_Result *= CoughNo.get(CoronaTest.getCough())/total;
-        Negative_Result *= SoreThroatNo.get(CoronaTest.getSoreThorat())/total;
-        Negative_Result *= RecentlytraveledNo.get(CoronaTest.getRecentlyTravled())/total;
-        Negative_Result *= (float) corona.get(false) / CoronaTest;
-
-
-        total=corona.get(true);
-        Positive_Result *= TemperatureYes.get(CoronaTest.getAche())/total;
-        Positive_Result *= AcheYes.get(CoronaTest.getAche())/total;
-        Positive_Result *= CoughYes.get(CoronaTest.getCough())/total;
-        Positive_Result *= SoreThroatYes.get(CoronaTest.getSoreThorat())/total;
-        Positive_Result *= RecentlytraveledYes.get(CoronaTest.getRecentlyTraveled())/total;
-        Positive_Result *= (float) corona.get(false) / CoronaTest;*/
-
-
-
-       // return Positive_Result / (Positive_Result + Negative_Result) * 100;
+        covid19.put("no", covid19.get("no") / total);
 
     }
+
+    public void results(String[] userInput){
+        setHashMaps();
+        hashMapValues();
+        probability();
+        double positive = 1,negative = 1;
+
+        for(int i = 0; i < userInput.length; i++)
+        {
+            System.out.println(i + "  " + userInput[i]);
+        }
+
+       if(userInput[0].equals("Hot"))
+       {
+           positive *= tempPos.get("hot");
+           System.out.println(positive);
+           negative *= tempNeg.get("hot");
+           System.out.println(negative);
+       }
+
+       if(userInput[0].equals("Normal"))
+       {
+            positive *= tempPos.get("normal");
+            System.out.println(positive);
+            negative *= tempNeg.get("normal");
+            System.out.println(negative);
+       }
+
+       if(userInput[0].equals("Cool"))
+       {
+           positive *= tempPos.get("cool");
+           System.out.println(positive);
+           negative *= tempNeg.get("cool");
+           System.out.println(negative);
+       }
+
+       if(userInput[0].equals("Cold"))
+       {
+           positive *= tempPos.get("cold");
+           System.out.println(positive);
+           negative *= tempNeg.get("cold");
+           System.out.println(negative);
+       }
+
+       if(userInput[1].equals("Yes"))
+       {
+           //positive *= achePos.get("yes");
+           positive = positive * achePos.get("yes");
+           System.out.println(positive);
+           //negative *= acheNeg.get("yes");
+           negative = negative * acheNeg.get("yes");
+           System.out.println(negative);
+       }
+
+        if(userInput[1].equals("No"))
+        {
+            //positive *= achePos.get("no");
+            positive = positive * achePos.get("no");
+            System.out.println(positive);
+            //negative *= acheNeg.get("no");
+            negative = negative * acheNeg.get("no");
+            System.out.println(negative);
+        }
+
+       if(userInput[2].equals("Yes"))
+       {
+           //positive *= coughPos.get("yes");
+           positive = positive * coughPos.get("yes");
+           System.out.println(positive);
+           //negative *= coughNeg.get("yes");
+           negative = negative * coughNeg.get("yes");
+           System.out.println(negative);
+       }
+       if(userInput[2].equals("No"))
+       {
+           //positive *= coughPos.get("no");
+           positive = positive * coughPos.get("no");
+           System.out.println(positive);
+           //negative *= coughNeg.get("no");
+           negative = negative * coughNeg.get("no");
+           System.out.println(negative);
+       }
+
+       if(userInput[3].equals("Yes"))
+       {
+           positive *= sorePos.get("yes");
+           System.out.println(positive);
+           negative *= soreNeg.get("yes");
+           System.out.println(negative);
+       }
+       if(userInput[3].equals("No"))
+       {
+           positive *= sorePos.get("no");
+           System.out.println(positive);
+           negative *= soreNeg.get("no");
+           System.out.println(negative);
+       }
+
+       if(userInput[4].equals("Yes"))
+       {
+           positive *= recentlyPos.get("yes");
+           System.out.println(positive);
+           negative *= recentlyNeg.get("yes");
+           System.out.println(negative);
+       }
+       if(userInput[4].equals("No"))
+       {
+           positive *= recentlyPos.get("no");
+           System.out.println(positive);
+           negative *= recentlyNeg.get("no");
+           System.out.println(negative);
+       }
+        positive *= covid19.get("Yes");
+        System.out.println(positive);
+        negative *= covid19.get("No");
+        System.out.println(negative);
+
+        System.out.println(positive + "     " + negative);
+        if(negative > positive)
+        {
+            System.out.println("Positive");
+        }
+        else{
+            System.out.println("Negative");
+        }
+
+
+    }
+
 }
 

@@ -15,6 +15,7 @@ public class User_Input extends Gui implements ActionListener{
             soreThroatNo, RecentlytraveledYes, RecentlytraveledNo;
     private ButtonGroup travels;
     public static String arr1[]= new String[5];
+    Excel_Array prob = new Excel_Array();
 
     public User_Input()
     {
@@ -255,7 +256,7 @@ public class User_Input extends Gui implements ActionListener{
 
         }
 
-
+        prob.results(arr1);
     }
 
 
