@@ -4,30 +4,33 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.List;
+
 
 public class CoronaTest extends Gui implements ActionListener {
 
-
+    //Setting variables for the coronaTest panel
     JPanel corona, backbutton;
     JLabel tester;
     JButton back;
     String arr1[]= new String[5];
+    String text;
 
 
-    public CoronaTest() {
+
+
+    public CoronaTest(String text) {
+        //Displaying coronaTest panel
         setTitle("COVID-19 Result");
         corona = new JPanel(new BorderLayout());
         add(corona);
         setSize(400,200);
-        tester = new JLabel("You have tested "+"For Corona");
+        tester = new JLabel("You have tested " + text + " For Corona");
         backbutton=new JPanel(new FlowLayout());
         corona.add(tester);
 
 
 
-
+        //Allowing the user to get back to the first panel/Setting the button to the bottom
         back = new JButton("Back");
         back.setAlignmentX(Component.BOTTOM_ALIGNMENT);
         back.setSize(50,50);
@@ -40,29 +43,15 @@ public class CoronaTest extends Gui implements ActionListener {
 
 
 
-        tester.setBorder(BorderFactory.createEmptyBorder(50, 125, 10, 0));
+        tester.setBorder(BorderFactory.createEmptyBorder(50, 100, 10, 0));
 
         arr1=User_Input.arr1;
 
         Excel_Sheet records = new Excel_Sheet();
-        //<List<String>> arr2 = records.Excel_Sheet();
-            //arr2.add();
-           // arr2.add(Excel_Sheet);
-
-        for(int i=0;i<5;i++){
-            System.out.println(arr1[i]);
-        }
-
-        /*for (int row = 0; row < records.length; row++) {
-            for (int col = 0; col < records[row].length; col++) {
-                records[row][col] = row * col;
-            }
-        }*/
-
 
     }
 
-
+    //Allows the user to go back after the test
     @Override
     public void actionPerformed(ActionEvent e) {
         User_Input test = new User_Input();

@@ -10,26 +10,22 @@ public class Excel_Sheet {
 
     public List Excel_Sheet() {
 
-
+        //Setting an arraylist for records
         List<List<String>> records = new ArrayList<>();
-        //try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\Sulta\\Desktop\\Semester 2\\Programming\\d18126659\\Assignment\\MLData.csv")))
+        //Telling the array what to find the ML Data for Covid-19
         try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\Sulta\\Desktop\\Java Assignment\\MLData.csv"))) {
             String line;
+            //Allowing the program to read line by line of the ML data
             while ((line = br.readLine()) != null) {
-                String[] values = line.split(",");
+                //Making all variables into small lowercase
+                String[] values = line.toLowerCase().split(",");
                 records.add(Arrays.asList(values));
             }
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
-
-
             return records;
     }
-       // public boolean FileReader(String MLData) {
-
-        //}
-
 
 
     }

@@ -8,7 +8,7 @@ public class Gui extends JFrame {
     private Dimension dim;
 
     public Gui() {
-        //super("COVID-19");
+        //Displaying the Gui on screen and setting it to the middle of your screen
         dim = Toolkit.getDefaultToolkit().getScreenSize();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(400, 600);
